@@ -7,8 +7,7 @@ class ReverseNum {
 	
 	// input = 1234
 	// output = 4321
-	int dummy = num;
-	int a,b;
+	int dummy1,dummy2;
 	int reversenum = 0;
 	while(num != 0)
 	{
