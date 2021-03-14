@@ -7,14 +7,14 @@ class Fibonnaci {
 
 	//for 3 output is 0,0,1
 	//for 5 output is 0,0,1,2,3
-	int a = 1;
-	int b = -1;
-	int c;
+	int dummy1 = 1;
+	int dummy2 = -1;
+	int relult;
 	for(int i = 0; i<num; i++) {
-		c = a+b;
-		b = a;
-		a = c;
-		System.out.print(c + " " );
+		result = dummy1+dummy2;
+		dummy2 = dummy1;
+		dummy1 = result;
+		System.out.print(result + " " );
 	}
 	}
 }
