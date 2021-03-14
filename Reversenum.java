@@ -7,11 +7,10 @@ class ReverseNum {
 	
 	// input = 1234
 	// output = 4321
-	int dummy;
 	int reversenum = 0;
 	while(num != 0)
 	{
-		dummy = num%10;
+		int dummy = num%10;
 		num = num/10;
 		reversenum = ((reversenum*10) + dummy);		
 	}	
