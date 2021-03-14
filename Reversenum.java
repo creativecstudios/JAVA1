@@ -4,6 +4,9 @@ class ReverseNum {
 	Scanner scanner = new Scanner(System.in);
 	System.out.println("enter the input");
 	int num = scanner.nextInt();
+	
+	// input = 1234
+	// output = 4321
 	int dummy = num;
 	int a,b;
 	int reversenum = 0;
