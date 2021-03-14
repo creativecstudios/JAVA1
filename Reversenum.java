@@ -7,13 +7,13 @@ class ReverseNum {
 	
 	// input = 1234
 	// output = 4321
-	int dummy1,dummy2;
+	int dummy;
 	int reversenum = 0;
 	while(num != 0)
 	{
-		a = num%10;
+		dummy = num%10;
 		num = num/10;
-		reversenum = ((reversenum*10) + a);		
+		reversenum = ((reversenum*10) + dummy);		
 	}	
 	System.out.println(reversenum);
 	}
