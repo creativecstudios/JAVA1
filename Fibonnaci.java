@@ -1,9 +1,9 @@
 import java.util.Scanner;
 class Fibonnaci {
 	public static void main(String args[]) {
-	Scanner z = new Scanner(System.in);
+	Scanner scanner = new Scanner(System.in);
 	System.out.println("Enter the input for Fibonnaci Series");
-	int num = z.nextInt();
+	int num = scanner.nextInt();
 	int a = 1;
 	int b = -1;
 	int c;
