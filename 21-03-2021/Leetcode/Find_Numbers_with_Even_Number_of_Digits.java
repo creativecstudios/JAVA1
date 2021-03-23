@@ -6,18 +6,17 @@ public class Find_Numbers_with_Even_Number_of_Digits {
 
 	public static int evendigits(int arr[]) {
 		//int arr[] = {234,12,121,2};
-		int dummy[] = new int[arr.length];
+		int sum = 0;
+		int result = 0;
 		for(int primaryindex = 0; primaryindex <arr.length; primaryindex ++) {
 			while(arr[primaryindex ]!=0) {
 				arr[primaryindex] = arr[primaryindex]/10;
-				dummy[primaryindex]++;
+				sum++;
 			}
-		}
-		int result = 0;
-		for(int arr1 : dummy) {
-			if(arr1%2==0) {
+			if(sum%2==0){
 				result++;
 			}
+
 		}
 		return result;
 	}
