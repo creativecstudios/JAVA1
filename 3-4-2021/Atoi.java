@@ -1,3 +1,5 @@
+package Leetcode;
+import java.util.Scanner;
 class AtoI {
     public int myAtoi(String s) {
         
