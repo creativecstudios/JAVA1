@@ -12,13 +12,17 @@ import java.util.Scanner;
 class RemoveElement{
 
 	public static int removeElement(int arr[], int value){
-		int pointer = 0;
-		for(int i=0; i<arr.length; i++){
+		int point = 0;
+		for(int tempIndex=0; tempIndex<arr.length; tempIndex++){
 			if(arr[i] != value){
-				arr[pointer++] = arr[i];
+				arr[point++] = arr[i];
 			}
 		}
-		return pointer;
+		for(int tempIndex2 = 0; tempIndex2<point; tempIndex2++){
+			System.out.println("["+arr[point]+" "+"]");
+		}	
+		System.out.println("");
+		return point;
 	}
 
 	public static void main(String args[]){
