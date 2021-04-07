@@ -18,7 +18,7 @@ class RemoveElement{
 				arr[pointer++] = arr[i];
 			}
 		}
-		return p2;
+		return pointer;
 	}
 
 	public static void main(String args[]){
@@ -35,6 +35,6 @@ class RemoveElement{
 		Merge_Sorted_Array obj = new Merge_Sorted_Array();
 		obj.inputArray(arr,size);
 
-		System.out.println(removeElement(arr));
+		System.out.println(removeElement(arr,target));
 	}
 }
