@@ -26,7 +26,7 @@ class RemoveDuplicateSortedArray{
 		int size = scanner.nextInt();
 		int arr[] = new int[size];
 		Merge_Sorted_Array obj = new Merge_Sorted_Array();
-
+		//input array elemets
 		obj.inputArray(arr,size);
 
 		System.out.println(removeDuplicateSortedArray(arr); 
