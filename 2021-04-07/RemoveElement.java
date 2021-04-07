@@ -19,7 +19,7 @@ class RemoveElement{
 			}
 		}
 		for(int tempIndex2 = 0; tempIndex2<point; tempIndex2++){
-			System.out.println("["+arr[point]+" "+"]");
+			System.out.println("["+arr[tempIndex2]+" "+"]");
 		}	
 		System.out.println("");
 		return point;
