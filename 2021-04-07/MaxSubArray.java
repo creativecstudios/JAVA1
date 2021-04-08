@@ -25,7 +25,7 @@ class MaxSubArray {
             return max;
         }
         for(int tempIndex = 1; tempIndex < nums.length; tempIndex++){
-		//comparint the currentelement of the array with maximum value found in the previous subarray
+		//comparing the currentelement of the array with maximum value found in the previous subarray
             currentsubarray = Math.max(nums[i], nums[i]+ currentsubarray);
 		//obtaining the max value from currentsubrray max and maximumvalue stored in max
             max = Math.max(max,currentsubarray);
