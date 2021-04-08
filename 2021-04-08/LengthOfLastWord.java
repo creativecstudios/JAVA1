@@ -4,6 +4,17 @@ package Leetcode;
 import java.util.Scanner;
 
 class LengthOfLastWord{
+	
+// Example 1:
+// Input: s = "Hello World"
+// Output: 5
+	
+// Example 2:
+// Input: s = " "
+// Output:
+	
+//input  "a "
+//output  1
 	public static int lengthOfLastWord(String inputstr){
 		
 		int count = 0;
