@@ -25,7 +25,9 @@ class MaxSubArray {
             return max;
         }
         for(int tempIndex = 1; tempIndex < nums.length; tempIndex++){
+		//comparint the currentelement of the array with maximum value found in the previous subarray
             currentsubarray = Math.max(nums[i], nums[i]+ currentsubarray);
+		//obtaining the max value from currentsubrray max and maximumvalue stored in max
             max = Math.max(max,currentsubarray);
         }
         return max;
@@ -34,9 +36,13 @@ class MaxSubArray {
 	Scanner scanner = new Scanner(System.in);
 	System.out.println("Enter the size of an array");
 	int size = scanner.nextInt();
+	    //array declaration
 	int arr[] = new int[size];
-	Merge_Sorted_Array obj = new Merge_Sorted_Array();	
+	    //geting input elements for an array from mergesorted class by creating an object
+	Merge_Sorted_Array obj = new Merge_Sorted_Array();
+	    //calling the inputryarrayt method form mergesorted class
 	obj.inputArray(arr,size);
+	    //printing the max sub array output
 	System.out.println(MaxSubArray(arr));
     }	
 }
