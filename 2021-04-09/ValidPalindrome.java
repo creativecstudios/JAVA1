@@ -1,17 +1,19 @@
 //https://leetcode.com/problems/valid-palindrome/
 
 package Leetcode;
+import java.util.Scanner;
+
 class ValidPalindrome{
 
-Example 1:
-Input: s = "A man, a plan, a canal: Panama"
-Output: true
-Explanation: "amanaplanacanalpanama" is a palindrome.
+// Example 1:
+// Input: s = "A man, a plan, a canal: Panama"
+// Output: true
+// Explanation: "amanaplanacanalpanama" is a palindrome.
 
-Example 2:
-Input: s = "race a car"
-Output: false
-Explanation: "raceacar" is not a palindrome.
+// Example 2:
+// Input: s = "race a car"
+// Output: false
+// Explanation: "raceacar" is not a palindrome.
 
 
 	public static boolean isPalindrome(String str){
