@@ -27,7 +27,7 @@ class ValidPalindrome{
 			while(start < end && !Character.isLetterOrDigit(str.charAt(end))){
 				end--;
 			}
-			if(start < end && Character.toLowerCase(str.charAt(start++) != Character.toLowerCase(str.charAt(end--))){
+			if(start < end && Character.toLowerCase(str.charAt(start++)) != Character.toLowerCase(str.charAt(end--))){
 				return false;
 			}
 		}
@@ -36,7 +36,7 @@ class ValidPalindrome{
 	public static void main(String args[]){
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("input the string for palindrome");
-		String input = scanner.nextInt();
+		String input = scanner.nextLine();
 		System.out.println(isPalindrome(input));
 	}
 }
