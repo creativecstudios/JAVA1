@@ -3,7 +3,15 @@
 package tree;
 
 class PalindromeList{
-
+	
+// Example 1:
+// Input: head = [1,2,2,1]
+// Output: true
+	
+// Example 2:
+// Input: head = [1,2]
+// Output: false
+	
     class Node{
 	int val;
 	Node next;
