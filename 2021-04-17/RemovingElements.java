@@ -3,7 +3,19 @@
 package tree;
 
 class RemoveElements {
-
+	
+// Example 1:	
+// Input: head = [1,2,6,3,4,5,6], val = 6
+// Output: [1,2,3,4,5]
+	
+// Example 2:
+// Input: head = [], val = 1
+// Output: []
+	
+// Example 3:
+// Input: head = [7,7,7,7], val = 7
+// Output: []
+	
 //NODE CLASS
     static class Node {
 	static int val;
@@ -26,6 +38,7 @@ class RemoveElements {
 
 //REMOVE ELEMENTS METHOD
     public static Node removeElements(Node head, int val) {
+	    //if head is the val move the head to next node so that it removed
         while(head != null && head.val == val){
             head = head.next;
         }
