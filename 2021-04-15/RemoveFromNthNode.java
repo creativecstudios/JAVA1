@@ -18,8 +18,8 @@ class RemoveNthNode {
 
     public static Node addNode(Node head,int val){
 	Node n = new Node(val);
-	head.next = n;
-	n = head;
+	n.next = head;
+	head = n;
 	return head;	
     
     }	
