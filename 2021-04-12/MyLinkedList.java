@@ -56,7 +56,7 @@ public class MyLinkedList {
 			return;
 		}
 		Node temp = head;
-		for(int i = 0; i<=index; i++) {
+		for(int i = 0; i<index; i++) {
 			temp = temp.next;
 		}
 		temp.next = temp.next.next;
