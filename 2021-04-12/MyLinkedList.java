@@ -52,7 +52,7 @@ public class MyLinkedList {
 		size ++;
 	}
 	public void deleteAtIndex(int index,int val) {
-		if(index < 0 || index >=0) {
+		if(index < 0 || index >=size) {
 			return;
 		}
 		Node temp = head;
