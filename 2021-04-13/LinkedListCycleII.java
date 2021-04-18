@@ -3,7 +3,22 @@ https://leetcode.com/explore/learn/card/linked-list/214/two-pointer-technique/12
 package tree;
 
 class LinkedListCycleII {
-
+	
+// Example 1:
+// Input: head = [3,2,0,-4], pos = 1
+// Output: tail connects to node index 1
+// Explanation: There is a cycle in the linked list, where tail connects to the second node.
+	
+// Example 2:
+// Input: head = [1,2], pos = 0
+// Output: tail connects to node index 0
+// Explanation: There is a cycle in the linked list, where tail connects to the first node.
+	
+// Example 3:
+// Input: head = [1], pos = -1
+// Output: no cycle
+// Explanation: There is no cycle in the linked list.
+	
 	static class Node{
 		int val;
 		Node next;
@@ -33,7 +48,7 @@ class LinkedListCycleII {
 		}
 
 		Node posistion = temp;
-		
+		System.out.println(posistion.val);
 		while(temp.next != null){
 			temp = temp.next;
 		}
