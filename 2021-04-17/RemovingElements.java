@@ -17,83 +17,58 @@ class RemoveElements {
 // Output: []
 	
 //NODE CLASS
-    static class Node {
-		static int val;
+	
+	static class Node{
+		int val;
 		Node next;
-
 		Node(int x){
 			this.val = x;
 		}
-	    }
+	}
 
-		 static Node head = null;
-		static int size = 1;
-	//addNode	
-		public static Node AddNode(Node head, int val){
-			Node n = new Node(val);
-			n.next = head;
-			head = n;
-			return head;
-		}
-	    
-		//addNodemethod2
-		public static Node addNode(int pos,int val) {
-			if(pos < 0 || pos > size) {
-				return null;
+	static Node head = null;
+	static int size = 1;
+	
+//add Nodes
+
+	public static Node addNodes(Node head, int val){
+		Node n = new Node(val);
+		n.next = head;
+		head = n;
+		return head;
+	}
+
+//remove elements
+
+	public static Node removeElements(Node head, int val){
+		if(head != null && head.val == val){
+			head = head.next;
+		}			
+		
+		Node temp = head;
+		while(temp != null && temp.next != null){
+			if(temp.next.val == val && temp.next != null){
+				temp.next = temp.next.next;
 			}
-			Node temp = head;
-			int count = 1;
-			while(count < pos) {
+			else{
 				temp = temp.next;
-				count ++;
 			}
-			Node n = new Node(val);
-			n.next = temp.next;
-			temp.next = n;
-			return head;
 		}
+		System.out.println(head.val);
+		return head;
+	}
 
-	//REMOVE ELEMENTS METHOD
-	    public static Node removeElements(Node head, int val) {
-	        while(head != null && head.val == val){
-	            head = head.next;
-	        }
-	        
-	        Node currentNode = head;
-	        
-	        while(currentNode != null && currentNode.next != null){
-	            if(currentNode.next.val == val){
-	                currentNode.next = currentNode.next.next;
-	            }
-	            else {
-	                currentNode = currentNode.next;
-	            }
-	        }
-	        System.out.println(head.val);
-	        return head;
-	    }
+//main method
+	public static void main(String args[]){
+		Node head = null;
+		head = addNodes(head,4);
+		head = addNodes(head,3);
+		head = addNodes(head,2);
+		head = addNodes(head,1);
+		//System.out.println(head.val);
+
+		System.out.println(removeElements(head,1));
 
 
-
-	//MAIN FUNCTION 
-	    public static void main(String args[]){
-	    	Node head = null;
-		head = AddNode(head,2);
-		head = AddNode(head,2);
-		head = AddNode(head,3);
-		head = AddNode(head,2);
-		head = AddNode(head,4);
-		head = AddNode(head,2);
-	    
-//	    	addNode(1,2);
-//	    	addNode(2,1);
-//	    	addNode(3,2);
-//	    	addNode(4,3);
-//	    	addNode(5,4);
-	    	
-
-		System.out.println(removeElements(head,2));
-
-
-    }
+	}
 }
