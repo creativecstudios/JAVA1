@@ -26,7 +26,7 @@ class RemoveElements {
 		}
 	    }
 
-		 Node head = null;
+		 static Node head = null;
 		static int size = 1;
 	//addNode	
 		public static Node AddNode(Node head, int val){
