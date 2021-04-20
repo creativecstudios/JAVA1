@@ -1,6 +1,17 @@
-
+//https://leetcode.com/explore/learn/card/linked-list/219/classic-problems/1207/
 import java.util.Scanner;
 class Removing {
+// Example 1:	
+// Input: head = [1,2,6,3,4,5,6], val = 6
+// Output: [1,2,3,4,5]
+	
+// Example 2:
+// Input: head = [], val = 1
+// Output: []
+	
+// Example 3:
+// Input: head = [7,7,7,7], val = 7
+// Output: []
 	class Node {
 		int val;
 		Node next;
@@ -58,6 +69,8 @@ class Removing {
 		}
 		return head;
 	}
+	
+//Main function
 	public static void main(String args[]){
 
 		Scanner scanner = new Scanner(System.in);
@@ -78,7 +91,7 @@ class Removing {
 			obj.addAtIndex(i,scanner.nextInt());
 		}
 
-//Before Removing
+//beforeRemovingElements
 		System.out.println("Before Removing Elements");
 		Node temp = head;
 		while(temp != null){
@@ -90,6 +103,7 @@ class Removing {
 		obj.removeElements(head,scanner.nextInt());
 		Node dummy = head;
 		
+//afterRemovingElements	
 		System.out.println("After removing elemets");
 		while(dummy != null){
 			System.out.print(dummy.val+" ");
