@@ -2,8 +2,6 @@
 
 package tree;
 
-import tree.OddEvenDigits.Node;
-
 public class PalindromeLinkedList {
 	class Node{
 		int val;
