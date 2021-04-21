@@ -2,69 +2,66 @@ https://leetcode.com/explore/learn/card/linked-list/214/two-pointer-technique/12
 
 package tree;
 
-class LinkedListCycleII {
-	
-// Example 1:
-// Input: head = [3,2,0,-4], pos = 1
-// Output: tail connects to node index 1
-// Explanation: There is a cycle in the linked list, where tail connects to the second node.
-	
-// Example 2:
-// Input: head = [1,2], pos = 0
-// Output: tail connects to node index 0
-// Explanation: There is a cycle in the linked list, where tail connects to the first node.
-	
-// Example 3:
-// Input: head = [1], pos = -1
-// Output: no cycle
-// Explanation: There is no cycle in the linked list.
-	
-	static class Node{
+public class LinkedListCycleII {
+
+	class Node{
 		int val;
 		Node next;
 		Node(int x){
 			this.val = x;
 		}
 	}
-	static Node head = null;
-
-//addNode
-	public static Node addNode(Node head, int val){
-		Node n = new Node(val);
-		n.next = head;
-		head = n;
-		return head;
+	Node head = null;
+	
+	//addNode
+	public void addNode(int val) {
+		Node temp,dummy;
+		temp = new Node(val);
+		if(head == null) {
+			head = temp;
+		}
+		else {
+			dummy = head;
+			while(dummy.next != null) {
+				dummy = dummy.next;
+			}
+			dummy.next = temp;
+		}
 	}
-
+	
+	//printNode
+	public void printNode(Node head) {
+		Node temp = head;
+		while(temp != null) {
+			System.out.print(temp.val+" ");
+			temp = temp.next;
+		}
+	}
+	
 //make loop / cycle
-	public static Node makeCycle(Node head,int pos){
+	public Node makeCycle(Node head,int pos){
 
 		Node temp = head;
 		int count = 1;
-
 		while(count < pos){
 			temp = temp.next;
 			count++;
 		}
-
 		Node posistion = temp;
-		System.out.println(posistion.val);
 		while(temp.next != null){
 			temp = temp.next;
 		}
-
 		temp.next = posistion;
-
 		return head;
 
 	}
 //LinkedListcycle2
-	public static Node linkdeistCycleII(ListNode head){
+	public Node linkdeistCycleII(Node head){
 		if(head == null){
 			return null;
 		}
-		ListNode slow = head;
-		ListNode fast = head;
+		Node slow = head;
+		Node fast = head;
 		
 		while(fast != null && fast.next != null){
 			
@@ -77,8 +74,9 @@ class LinkedListCycleII {
 					slow = slow.next;
 					fast = fast.next;
 				}
+			System.out.println("\nOutput "+slow.val);
 			return slow;
-			System.out.println(slow.val);
+			
 			}
 		}
 		return null;
@@ -86,15 +84,22 @@ class LinkedListCycleII {
 
 //Main function
 
-	public static void main(String args[]){
-		Node head = null;
-		head = addNode(head,6);
-		head = addNode(head,5);
-		head = addNode(head,4);
-		head = addNode(head,3);
-		head = addNode(head,2);
-		head = addNode(head,1);
-		makeCycle(head,3);
-		System.out.println(linkdeistCycleII(head));
+	public static void main(String args[]) {
+		
+	LinkedListCycleII obj = new LinkedListCycleII();
+		
+		obj.addNode(1);
+		obj.addNode(2);
+		obj.addNode(8);
+		obj.addNode(7);
+		obj.addNode(5);
+		obj.addNode(6);
+		
+		obj.printNode(obj.head);
+		
+		obj.makeCycle(obj.head, 3);
+		
+		obj.linkdeistCycleII(obj.head);
 	}
+
 }
