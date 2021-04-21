@@ -48,7 +48,7 @@ public class RemovingElements{
 	}
 	
 	//printNode
-	public void printNode() {
+	public void printNode(Node head) {
 		Node temp = head;
 		while(temp != null) {
 			System.out.print(temp.val+" ");
@@ -68,9 +68,9 @@ public class RemovingElements{
 		 obj.addNode(5);
 		 System.out.println("Before Removing");
 		 obj.printNode();
-		 obj.removeElements(obj.head,2);
+		 Node temp = obj.removeElements(obj.head,2);
 		 System.out.println("\nAfter Removing");
-		 obj.printNode();
+		 obj.printNode(temp);
 		
 	}
 
