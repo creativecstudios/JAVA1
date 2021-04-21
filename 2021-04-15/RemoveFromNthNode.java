@@ -2,64 +2,71 @@ https://leetcode.com/explore/learn/card/linked-list/214/two-pointer-technique/12
 
 package tree;
 
-class RemoveNthNode {
+public class RemoveNthfromEnd {
 
-    static class Node{
-	
-	int val;
-	Node next;
-	Node(int x){
-		this.val = x;
+	class Node{
+		int val;
+		Node next;
+		Node(int x){
+			this.val = x;
+		}
 	}
-
-    Node head = null;
-
-    //add Node
-
-    public static Node addNode(Node head,int val){
-	Node n = new Node(val);
-	n.next = head;
-	head = n;
-	return head;	
-    
-    }	
-
-    // Remove Nth Node
-	
-    public ListNode removeNthFromEnd(Node head, int n) {
-        Node dummy = new ListNode(0);
-        dummy.next = head;
-        
-        Node slow = dummy;
-        Node fast = dummy;
-        
-        for(int i = 1; i <= n+1; i++){
-            
-                fast = fast.next;
-        }
-        while(fast != null){
-            slow = slow.next;
-            fast = fast.next;
-        }
-        slow.next = slow.next.next;
-        return dummy.next;
-    }   
-
-    //main class
-
-    public static void main(String args[]) {
 	Node head = null;
 	
-	head = addNode(head,1);
-	head = addNode(head,2);
-	head = addNode(head,3);
-	head = addNode(head,4);
-	head = addNode(head,5);
-	head = addNode(head,6);
-
-       	System.out.println(removeNthFromEnd(head, 5));
-
+	//addNode
+	public void addNode(int val) {
+		Node temp,dummy;
+		temp = new Node(val);
+		if(head == null) {
+			head = temp;
+		}
+		else {
+			dummy = head;
+			while(dummy.next != null) {
+				dummy = dummy.next;
+			}
+			dummy.next = temp;
+		}
+	}
 	
-
-    }   
+	//printNode
+	public void printNode(Node head) {
+		Node temp = head;
+		while(temp != null) {
+			System.out.print(temp.val+" ");
+			temp = temp.next;
+		}
+	}
+	
+	//Remove Nth node
+	public Node removeNfromEnd(Node head, int n) {
+		Node temp = head;
+		
+		Node fast = head;
+		Node slow = head;
+		for(int i=1; i<n+1; i++) {
+			fast = fast.next;
+		}
+		while(fast != null) {
+			fast = fast.next;
+			slow = slow.next;
+		}
+		slow.next = slow.next.next;
+		return temp;
+	}
+	public static void main(String args[]) {
+		
+		RemoveNthfromEnd obj = new RemoveNthfromEnd();
+		
+		obj.addNode(1);
+		obj.addNode(2);
+		obj.addNode(3);
+		obj.addNode(4);
+		obj.addNode(5);
+		System.out.println("Input");
+		obj.printNode(obj.head);
+		Node result = obj.removeNfromEnd(obj.head, 4);
+		System.out.println();
+		obj.printNode(result);
+	}
 }
