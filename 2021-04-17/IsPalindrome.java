@@ -2,68 +2,74 @@
 
 package tree;
 
-class PalindromeList{
-	
-// Example 1:
-// Input: head = [1,2,2,1]
-// Output: true
-	
-// Example 2:
-// Input: head = [1,2]
-// Output: false
-	
-    class Node{
-	int val;
-	Node next;
-	Node(int x){
-		this.val = x;
+import tree.OddEvenDigits.Node;
+
+public class PalindromeLinkedList {
+	class Node{
+		int val;
+		Node next;
+		Node(int x){
+			this.val = x;
+		}
 	}
-    }
-
-    Node head = null;
-
+	Node head = null;
+	
 //addNode
-    public static Node addNode(Node head, int val){
-	Node n = new Node(val);
-	n.next = head;
-	head = n;
-	return head;	
-    }
+	public void addNode(int val) {
+		Node temp;
+		Node dummy;
+		temp = new Node(val);
+		if(head == null) {
+			head = temp;
+		}
+		else {
+			dummy = head;
+			while(dummy.next != null) {
+				dummy = dummy.next;
+			}
+			dummy.next = temp;
+		}
+	}
+//printNode	
+	public void printNode(Node head) {
+		Node temp = head;
+		while(temp != null) {
+			System.out.print(temp.val+" ");
+			temp = temp.next;
+		}
+	}
+// Palindrome
 
-//Palindrome method
-    public static boolean isPalindrome(Node head) {
-        Node slow = head;
-        Node fast = head;
-        
-        while(fast != null && fast.next != null){
-            slow = slow.next;
-            fast = fast.next.next;
-        }
-        
-        Node mid = null;
-//obtaining mid value if values are odd
-        if(fast != null){
-            mid = slow.next;
-        }
-//obtaining mid value if values are even
-        else{
-            mid = slow;
-        }
-        
-        Node prev = null;
-        Node newnext = null;
-
-//reversing the nodes from mid to tail   
-   
-        while(mid != null){
-            newnext = mid.next;
-            mid.next = prev;
-            prev = mid;
-            mid = newnext;
-        }
-  
-//palindrome check      
-        while(prev != null){
+	public boolean isPalindrome(Node head) {
+		Node temp = head;
+		if(head == null) {
+			return false;
+		}
+		Node mid = null;
+		Node slow = head;
+		Node fast = head;
+	
+		while(fast != null && fast.next != null) {
+			slow = slow.next;
+			fast = fast.next.next;
+		}
+		if(fast != null) {
+			mid = slow.next;
+		}
+		else {
+			mid = slow;
+		}
+		
+		Node prev = null;
+		Node newNext = null;
+		
+		while(mid != null) {
+			newNext = mid.next;
+			mid.next = prev;
+			prev = mid;
+			mid = newNext;
+		}
+		while(prev != null){
             if(prev.val != head.val){
                 return false;
             }
@@ -71,17 +77,20 @@ class PalindromeList{
             head = head.next;
         }
         return true;
-    }
-
+	
+	}
 //main method
-    public static void main(String args[]){
-	Node head = null;
-	head = addNode(head,1);
-	head = addNode(head,2);
-	head = addNode(head,3);
-	head = addNode(head,2);
-	head = addNode(head,1);
-
-	System.out.println(isPalindrome(head));
-    }
+	public static void main(String args[]) {
+		
+		PalindromeLinkedList obj = new PalindromeLinkedList();
+		obj.addNode(1);
+		obj.addNode(2);
+		obj.addNode(3);
+		obj.addNode(2);
+		obj.addNode(1);
+		System.out.println("Input");
+		obj.printNode(obj.head);
+		boolean result = obj.isPalindrome(obj.head);
+		System.out.println("\n"+ result);
+	}
 }
