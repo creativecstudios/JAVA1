@@ -1,66 +1,81 @@
 //https://leetcode.com/explore/learn/card/linked-list/219/classic-problems/1208/
 
-pacakage tree;
+package tree;
 
-class OddEvenList {
-//Node class
-	
-// Example 1:	
-// Input: head = [1,2,3,4,5]
-// Output: [1,3,5,2,4]
-	
-// Example 2:
-// Input: head = [2,1,3,5,6,4,7]
-// Output: [2,3,6,7,1,5,4]
-	
-    static class Node {
-	static int val;
-	Node next;
-	Node(int x){
-		this.val = x;
+public class OddEvenDigits {
+
+	class Node{
+		int val;
+		Node next;
+		Node(int x){
+			this.val = x;
+		}
 	}
-    }
-    Node head = null;
-
-//AddNode
-    public static addNode(Node head,int val){
-	Node n = new Node(val);
-	n.next = head;
-	head = n;
-	return head;
-    }
-
-//oddeven method	
-    public static Node oddEvenList(Node head) {
-    
-        if(head == null){
-            return null;
-        }
-        Node odd = head;
-        Node even = head.next;
-        Node evenhead = even;
-        
-        while(even != null && even.next != null){
-            odd.next = even.next;
-            odd = odd.next;
-            even.next = odd.next;
-            even = even.next;
-        }
-        odd.next = evenhead;
-        return head;
-    }
-
-//main method
-    public static void main(String args[]){
 	Node head = null;
-	head = addNode(head,1);
-	head = addNode(head,2);
-	head = addNode(head,3);
-	head = addNode(head,4);
-	head = addNode(head,5);
-
-	oddEvenList(head);
-
-    }	
-    
+	
+//addNode
+	public void addNode(int val) {
+		Node temp;
+		Node dummy;
+		temp = new Node(val);
+		if(head == null) {
+			head = temp;
+		}
+		else {
+			dummy = head;
+			while(dummy.next != null) {
+				dummy = dummy.next;
+			}
+			dummy.next = temp;
+		}
+	}
+//printNode	
+	public void printNode(Node head) {
+		Node temp = head;
+		while(temp != null) {
+			System.out.print(temp.val+" ");
+			temp = temp.next;
+		}
+	}
+//oddEvenMethod
+	public Node oddEvenLidt(Node head) {
+		if(head == null) {
+			return null;
+		}
+		Node temp = head;
+		
+		Node odd = head;
+		Node even = head.next;
+		Node evenhead = even;
+		
+		while(even != null && even.next != null) {
+			odd.next = even.next;
+			odd = odd.next;
+			even.next = odd.next;
+			even = even.next;
+		}
+		odd.next = evenhead;
+		return head;
+	}
+	
+//main method
+	public static void main(String args[]) {
+		
+		OddEvenDigits obj = new OddEvenDigits();
+		
+		obj.addNode(1);
+		obj.addNode(2);
+		obj.addNode(3);
+		obj.addNode(4);
+		obj.addNode(5);
+		obj.addNode(6);
+		
+		System.out.println("Input\n");
+		obj.printNode(obj.head);
+		
+		Node result = obj.oddEvenLidt(obj.head);
+		
+		System.out.println("\n\nOutput\n");
+		obj.printNode(result);
+	}
 }
