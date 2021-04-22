@@ -11,10 +11,18 @@ public class Intersection_of_Two_Linked_Lists {
 			this.val = x;
 		}
 	}
-	Node head = null;
 	Node head1 = null;
+	Node head2 = null;
+	
+//addHead
+	public Node addHead(Node head,int val){
+		if(head == null){
+			head = new Node(val);
+		}
+		return head;
+	}	
 //addNode
-	public void addNode(int val) {
+	public void addNode(Node head,int val) {
 		Node temp,dummy;
 		temp = new Node(val);
 		if(head == null) {
@@ -22,22 +30,6 @@ public class Intersection_of_Two_Linked_Lists {
 		}
 		else {
 			dummy = head;
-			while(dummy.next != null) {
-				dummy = dummy.next;
-			}
-			dummy.next = temp;
-		}
-	}
-	
-//addNode
-	public void addNode1(int val) {
-		Node temp,dummy;
-		temp = new Node(val);
-		if(head1 == null) {
-			head1 = temp;
-		}
-		else {
-			dummy = head1;
 			while(dummy.next != null) {
 				dummy = dummy.next;
 			}
@@ -103,30 +95,30 @@ public class Intersection_of_Two_Linked_Lists {
 	public static void main(String args[]){
 		Intersection_of_Two_Linked_Lists obj = new Intersection_of_Two_Linked_Lists();
 //input head1		
-		obj.addNode(1);
-		obj.addNode(2);
-		obj.addNode(3);
-		obj.addNode(4);
-		obj.addNode(5);
-		obj.addNode(6);
-//input head2		
-		obj.addNode1(8);
-		obj.addNode1(2);
-		obj.addNode1(3);
-		obj.addNode1(1);
-		
+		Node head1 = obj.addHead(obj.head1, 1);
+		obj.addNode(head1, 2);
+		obj.addNode(head1, 3);
+		obj.addNode(head1, 4);
+		obj.addNode(head1, 5);
+		obj.addNode(head1, 2);
+//input head2	
+		Node head2 = obj.addHead(obj.head2, 4);
+		obj.addNode(head2, 2);
+		obj.addNode(head2, 8);
+		obj.addNode(head2, 5);
+	
 		System.out.println("Head1");
-		obj.printNode(obj.head);
+		obj.printNode(head1);
 		System.out.println();
 		
 		System.out.println("Head2");
-		obj.printNode(obj.head1);
+		obj.printNode(head2);
 		System.out.println();
 		
 		System.out.println("Make Intersection");
-		obj.makeIntersect(obj.head, obj.head1, 3);
+		obj.makeIntersect(head1,head2, 3);
 		
-		System.out.println("Intersection");
-		obj.intersectionofTwoLinkedList(obj.head, obj.head1);
+		System.out.println("Intersection of two LinkedList");
+		obj.intersectionofTwoLinkedList(head1, head2);
 	}
 }
