@@ -6,6 +6,26 @@ import java.util.List;
 
 public class PreOrderLeetCode {
 
+// Example 1:
+// Input: root = [1,null,2,3]
+// Output: [1,2,3]
+
+// Example 2:
+// Input: root = []
+// Output: []
+
+// Example 3:
+// Input: root = [1]
+// Output: [1]
+
+// Example 4:
+// Input: root = [1,2]
+// Output: [1,2]
+
+// Example 5:
+// Input: root = [1,null,2]
+// Output: [1,2]
+
 	class Node {
 		int val;
 		Node left;
@@ -76,7 +96,6 @@ public class PreOrderLeetCode {
 		List<Integer> output = obj.printNode(result);
 
 		System.out.println(output);
-
 		
 	}
 }
