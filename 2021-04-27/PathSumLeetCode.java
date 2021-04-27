@@ -4,7 +4,19 @@ package BinarySearchTree;
 import java.util.Scanner;
 
 public class PathSumLeetCode {
-
+	
+// Example 1:
+// Input: root = [5,4,8,11,null,13,4,7,2,null,null,null,1], targetSum = 22
+// Output: true
+	
+// Example 2:
+// Input: root = [1,2,3], targetSum = 5
+// Output: false
+	
+// Example 3:
+// Input: root = [1,2], targetSum = 0
+// Output: false
+	
 	class Node{
 		int val;
 		Node left;
