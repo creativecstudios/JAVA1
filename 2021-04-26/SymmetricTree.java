@@ -26,7 +26,7 @@ public class SymmetricTree {
 			return true;
 		}
 		
-		return isSymmetric(root.left);
+		return isSymmetric(root.left,root.right);
 	}
 	
 	public boolean isSymmetric(Node left,Node right) {
