@@ -3,37 +3,52 @@
 package leetCode_Easy_118;
 
 import java.util.HashMap;
+// Example 1:
 
+// Input: pattern = "abba", s = "dog cat cat dog"
+// Output: true
+// Example 2:
+
+// Input: pattern = "abba", s = "dog cat cat fish"
+// Output: false
+// Example 3:
+
+// Input: pattern = "aaaa", s = "dog cat cat dog"
+// Output: false
+// Example 4:
+
+// Input: pattern = "abba", s = "dog dog dog dog"
+// Output: false
 public class WordPattern {
-Pseudo Code
-Begin
-String pattern,s
-Output("input pattern")
-Input pattern
-Output("input s")
-Input s
-String[] str = s.split(" ")
-HashMap<Character,String> map = new HashMap();
-If (str.length != pattern.length)
-	return false
-Declare i = 0
-For i 0 to pattern.length
-	Declare String curr
-	curr = map.get(pattern.charAt(i))
-	If(curr != null)
-		If(!curr.equals(str[i]))
-			return false;
-		End If
-	End If
-	Else If(!map.containsValue(str[i]))
-		map.add(pattern.charAt(i),str[i])
-	End Else If
-	Else
-		return false
-	End Else
-End For
-Return True
-Stop
+// Pseudo Code
+// 	Begin
+// 	String pattern,s
+// 	Output("input pattern")
+// 	Input pattern
+// 	Output("input s")
+// 	Input s
+// 	String[] str = s.split(" ")
+// 	HashMap<Character,String> map = new HashMap();
+// 	If (str.length != pattern.length)
+// 		return false
+// 	Declare i = 0
+// 	For i 0 to pattern.length
+// 		Declare String curr
+// 		curr = map.get(pattern.charAt(i))
+// 		If(curr != null)
+// 			If(!curr.equals(str[i]))
+// 				return false;
+// 			End If
+// 		End If
+// 		Else If(!map.containsValue(str[i]))
+// 			map.add(pattern.charAt(i),str[i])
+// 		End Else If
+// 		Else
+// 			return false
+// 		End Else
+// 	End For
+// 	Return True
+// 	Stop
 	//wordPattern
 	public static boolean wordPattern(String pattern,String s) {
 		 String str[] = s.split(" ");
