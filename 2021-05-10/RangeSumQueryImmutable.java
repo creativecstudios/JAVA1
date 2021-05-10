@@ -9,8 +9,9 @@ public class RangeSumQueryImmutable {
 	//Declare arr[]
 	//Input arr[]
 	//Declare sum = 0
-	//Initialize i = 0;
-	//For i 0 to arr.length
+	//Declare left,right
+	//Input left,right
+	//For i = left to right Increament i
 	//sum = sum + arr[i]
 	//End For
 	//End
