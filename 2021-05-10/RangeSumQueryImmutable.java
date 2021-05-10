@@ -9,9 +9,8 @@ public class RangeSumQueryImmutable {
 	//Declare arr[]
 	//Input arr[]
 	//Declare sum = 0
-	//Declare left,right
-	//Input left,right
-	//For i = left to right Increament i
+	//Initialize i = 0;
+	//For i 0 to arr.length
 	//sum = sum + arr[i]
 	//End For
 	//End
@@ -28,6 +27,19 @@ public class RangeSumQueryImmutable {
 			sum += arr[temp];
 		}
 		return sum;
+	}
+	//method two
+	static private int sum[];
+
+	public static void numarr1(int nums[]) {
+		sum = new int[nums.length + 1];
+		for(int i = 0; i < nums.length; i++) {
+			sum[i+1] = sum[i]+nums[i];
+		}
+	}
+
+	public static int sum1(int left,int right) {
+		return sum[right + 1] - sum[left];
 	}
 	
 	public static void main(String args[]) {
