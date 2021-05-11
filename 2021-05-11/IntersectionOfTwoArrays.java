@@ -19,7 +19,7 @@ import java.util.ArrayList;
 //ForEach n to arr2
 //	set2.add(n)
 //EndForEach
-//set1.retainAll(set2)
+//set1.retainAll(set2) || set1.contains(set2)
 //Declare result[] with set1.size()
 //Initialize count = 0
 //ForEach temp to set1
@@ -50,6 +50,7 @@ public class IntersectionOfTwoArrays {
 			set2.add(n2);
 		}
 		
+		//also use set1.contains(set2) will give the same result
 		set1.retainAll(set2);
 		
 		int result[] = new int[set1.size()];
