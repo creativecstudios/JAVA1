@@ -22,4 +22,8 @@ private void backtrack(int start,int[] arr,int target,List<Integer> list,List<Li
   }
 }
 ```
-![Images](/home/premg/Downloads)
+
+
+![IMG_20210614_192915](https://user-images.githubusercontent.com/63385985/121907155-6c681800-cd49-11eb-8bb0-ef3945ab8d46.jpg)
+![IMG_20210614_192946](https://user-images.githubusercontent.com/63385985/121907201-768a1680-cd49-11eb-8493-10b5ef7acba2.jpg)
+
