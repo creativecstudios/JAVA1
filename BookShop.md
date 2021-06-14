@@ -20,7 +20,7 @@
 
 ```java
 try{
-  Class.forName("com.mysql.jdbc.cj.Driver");
+  Class.forName("com.mysql.cj.jdbc.Driver");
   con = DriverManager.getConnection("jdbc:mysql://localhost/javacure","root","");
 }
 catch(ClassNotFoundException e){
