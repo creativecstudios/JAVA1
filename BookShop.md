@@ -6,6 +6,7 @@
 ### Download MySQL connector for JAVA
   * Add the path to library
   * Creae DataBase and Table using Xampp
+  * sudo /opt/lampp/lampp start
 
 ### DataBase Connection
    
@@ -29,6 +30,8 @@ catch(SQLException e){
    e.printStackTrace();
 }
 ```
+
+
 
 
 
